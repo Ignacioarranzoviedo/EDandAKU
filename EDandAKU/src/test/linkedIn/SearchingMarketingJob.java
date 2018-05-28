@@ -24,7 +24,7 @@ public class SearchingMarketingJob {
 				eventFiringDriver.get("https://www.linkedin.com");
 				
 				System.out.println("<LinkedIn main page");
-	//prueba
+	
 	}
 
 }
