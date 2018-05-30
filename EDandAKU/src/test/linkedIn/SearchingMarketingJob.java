@@ -1,6 +1,7 @@
 package test.linkedIn;
 
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeUnit; 
+
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -27,9 +28,10 @@ public class SearchingMarketingJob {
 				
 				System.out.println("LinkedIn main page");
 				
+				//Login 
 				LoginPage search=new LoginPage(eventFiringDriver);
 				search.login("ignacio.a.oviedo@gmail.com", "daijiroslick24");
-				Thread.sleep(4000);
+				
 				
 	
 	}
