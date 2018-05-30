@@ -17,7 +17,7 @@ WebDriver driver;
 
 	
 	//*********Web Elements*********
-	@FindBy(css="#ember994 > input:nth-child(1)")
+	@FindBy(css="input:nth-child(1)")
 	private WebElement findingField;
 	
 		public MainPage(WebDriver driver) {
