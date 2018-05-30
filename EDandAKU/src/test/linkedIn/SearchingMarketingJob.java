@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
+import po.linkedIn.FilterAndResultPage;
 import po.linkedIn.LoginPage;
 import po.linkedIn.MainPage;
 
@@ -36,6 +37,10 @@ public class SearchingMarketingJob {
 				//Looking for a job.
 				MainPage typeFindingField=new MainPage(eventFiringDriver);
 				typeFindingField.lookingForMarketingJob("Marketing");
+				
+				FilterAndResultPage filterJobs=new FilterAndResultPage(eventFiringDriver);
+				filterJobs.onlyJobs();
+				filterJobs.setLocation("Madrid");
 	
 	}
 
