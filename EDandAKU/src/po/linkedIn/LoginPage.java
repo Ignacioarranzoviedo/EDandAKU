@@ -1,7 +1,9 @@
 package po.linkedIn;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 /**
  * @author Nacho
@@ -12,18 +14,28 @@ public class LoginPage {
 	WebDriver driver;
 	
 	//*********Web Elements*********
-		By loginMail=By.id("login-email");
-		By loginPassword=By.id("login-password");
-		By loginButton=By.id("login-submit");
+		@FindBy(id="login-email")
+		private WebElement loginMail;
+		
+		@FindBy(id="login-password")
+		private WebElement loginPassword;
+		
+		@FindBy(id="login-submit")
+		private WebElement loginButton;
+		
 		
 		public LoginPage (WebDriver driver) {
 			this.driver=driver;
+			PageFactory.initElements(driver, this);
 		}
 		
 		public void login(String email, String password) {
-			driver.findElement(loginMail).sendKeys(email);
-			driver.findElement(loginPassword).sendKeys(password);
-			driver.findElement(loginButton).click();
+			this.loginMail.sendKeys(email);
+			this.loginPassword.sendKeys(password);
+			this.loginButton.click();
 			System.out.println("****************LOGIN****************");
+			
 		}
 }
+
+

@@ -8,6 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import po.linkedIn.LoginPage;
+import po.linkedIn.MainPage;
 
 /**
  * @author Nacho
@@ -28,11 +29,13 @@ public class SearchingMarketingJob {
 				
 				System.out.println("LinkedIn main page");
 				
-				//Login 
-				LoginPage search=new LoginPage(eventFiringDriver);
-				search.login("ignacio.a.oviedo@gmail.com", "daijiroslick24");
+				//Login.
+				LoginPage typeCredentials=new LoginPage(eventFiringDriver);
+				typeCredentials.login("ignacio.a.oviedo@gmail.com", "daijiroslick24");
 				
-				
+				//Looking for a job.
+				MainPage typeFindingField=new MainPage(eventFiringDriver);
+				typeFindingField.lookingForMarketingJob("Marketing");
 	
 	}
 
