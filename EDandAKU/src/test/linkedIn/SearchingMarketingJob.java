@@ -31,7 +31,7 @@ public class SearchingMarketingJob {
 				
 				//Login.
 				LoginPage typeCredentials=new LoginPage(eventFiringDriver);
-				typeCredentials.login("ignacio.a.oviedo@gmail.com", "daijiroslick24");
+				typeCredentials.login("ignacio.a.oviedo@gmail.com", "pacoflaco1");
 				
 				//Looking for a job.
 				MainPage typeFindingField=new MainPage(eventFiringDriver);
