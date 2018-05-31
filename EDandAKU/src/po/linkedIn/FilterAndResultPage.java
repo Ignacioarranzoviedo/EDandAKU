@@ -17,10 +17,12 @@ public class FilterAndResultPage {
 	WebDriver driver;
 	
 	//*********Web Elements*********
-	@FindBy(css="li.search-vertical-filter__filter-item:nth-child(2) > button:nth-child(1)")
+	String text = "Empleos";
+	String JobsButton = "//div[contains(text(), '" + text + "')]";
+	@FindBy(xpath= "button[starts-with(@id, 'Submit-')]")
 	private WebElement jobs;
 	
-	@FindBy(css="input:nth-child(1)")
+	@FindBy(xpath="/html/body/div[5]/div[6]/div[3]/div/div[1]/div/div/nav/div[1]/ul/li[2]")
 	private WebElement location;
 	
 	public FilterAndResultPage(WebDriver driver) {
