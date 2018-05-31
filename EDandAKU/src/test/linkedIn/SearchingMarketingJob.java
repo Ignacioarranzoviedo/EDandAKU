@@ -35,13 +35,10 @@ public class SearchingMarketingJob {
 				typeCredentials.login("ignacio.a.oviedo@gmail.com", "pacoflaco1");
 				
 				//Looking for a job.
-				MainPage typeFindingField=new MainPage(eventFiringDriver);
-				typeFindingField.lookingForMarketingJob("Marketing");
+				MainPage lookingOnlyJobs=new MainPage(eventFiringDriver);
+				lookingOnlyJobs.onlyJobs2();
 				
-				FilterAndResultPage filterJobs=new FilterAndResultPage(eventFiringDriver);
-				filterJobs.onlyJobs();
-				filterJobs.setLocation("Madrid");
-	
+				FilterAndResultPage typeJob=new FilterAndResultPage(eventFiringDriver);
+				typeJob.wordJobs();
 	}
-
 }

@@ -1,5 +1,7 @@
 package po.linkedIn;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,11 +19,13 @@ public class FilterAndResultPage {
 	WebDriver driver;
 	
 	//*********Web Elements*********
-	@FindBy(css="li.search-vertical-filter__filter-item:nth-child(2) > button:nth-child(1)")
-	private WebElement jobs;
+	
+	
 	
 	@FindBy(css="input:nth-child(1)")
 	private WebElement location;
+	
+	
 	
 	public FilterAndResultPage(WebDriver driver) {
 		this.driver=driver;
@@ -29,14 +33,32 @@ public class FilterAndResultPage {
 		}
 	
 	public void onlyJobs() {
-		this.jobs.click();
+		try {
+			
+		WebElement jobs = driver.findElement(By.xpath("//*[contains(text(), 'Empleos')]"));
+		Thread.sleep(1000);
+		jobs.click();
+		}catch (Exception e){
+		}
 	}
 	
-	public void setLocation(String city) {
+	public void setLocationwihtDoubleClick(String city) {
 		Actions action = new Actions(driver).doubleClick(location);
 		action.build().perform();
 		this.location.sendKeys(city);
 		this.location.sendKeys(Keys.ENTER);
 	}	
 	
+	public void wordJobs() {
+		try {
+			
+		WebElement searchJobs = driver.findElement(By.xpath("//*[contains(text(), 'Buscar empleos')]"));
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();", searchJobs);
+		Thread.sleep(1000);
+		searchJobs.sendKeys("Marketing");
+		}catch (Exception e){
+		}
+	}
 }
+
