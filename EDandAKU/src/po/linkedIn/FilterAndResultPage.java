@@ -17,9 +17,9 @@ public class FilterAndResultPage {
 	WebDriver driver;
 	
 	//*********Web Elements*********
-	String text = "Empleos";
-	String JobsButton = "//div[contains(text(), '" + text + "')]";
-	@FindBy(xpath= "button[starts-with(@id, 'Submit-')]")
+	
+	static final JobsButton = //div[contains(text(), '" + text + "')];
+	@FindBy(xpath= JobsButton)
 	private WebElement jobs;
 	
 	@FindBy(xpath="/html/body/div[5]/div[6]/div[3]/div/div[1]/div/div/nav/div[1]/ul/li[2]")
