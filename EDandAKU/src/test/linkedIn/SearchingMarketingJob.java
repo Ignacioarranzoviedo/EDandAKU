@@ -40,10 +40,10 @@ public class SearchingMarketingJob {
 				MainPage typeMarketingJob= new MainPage(eventFiringDriver);
 				typeMarketingJob.lookingForMarketingJob("Marketing");
 				
-				MainPage lookingOnlyJobs=new MainPage(eventFiringDriver);
-				lookingOnlyJobs.onlyJobs2();
+				FilterAndResultPage lookingOnlyJobs=new FilterAndResultPage(eventFiringDriver);
+				lookingOnlyJobs.onlyJobs();
 				
-				FilterAndResultPage typeJob=new FilterAndResultPage(eventFiringDriver);
-				typeJob.wordJobs();
+				//FilterAndResultPage typeJob=new FilterAndResultPage(eventFiringDriver);
+				//typeJob.wordJobs();
 	}
 }
