@@ -24,6 +24,8 @@ public class SearchingMarketingJob {
 				EventFiringWebDriver eventFiringDriver = new EventFiringWebDriver(driver);
 				IAmTheEventListener eventListener = new IAmTheEventListener();
 				
+				eventFiringDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+				
 				eventFiringDriver.register(eventListener);
 				eventFiringDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 				eventFiringDriver.get("https://www.linkedin.com");
@@ -35,6 +37,9 @@ public class SearchingMarketingJob {
 				typeCredentials.login("ignacio.a.oviedo@gmail.com", "pacoflaco1");
 				
 				//Looking for a job.
+				MainPage typeMarketingJob= new MainPage(eventFiringDriver);
+				typeMarketingJob.lookingForMarketingJob("Marketing");
+				
 				MainPage lookingOnlyJobs=new MainPage(eventFiringDriver);
 				lookingOnlyJobs.onlyJobs2();
 				
