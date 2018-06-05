@@ -35,7 +35,7 @@ public class FilterAndResultPage {
 	public void onlyJobs() {
 		try {
 			
-		WebElement jobs = driver.findElement(By.xpath("//*[contains(text(), 'Empleos')]"));
+		WebElement jobs = driver.findElement(By.cssSelector("[data-vertical=JOBS]"));
 		Thread.sleep(1000);
 		jobs.click();
 		}catch (Exception e){
@@ -51,14 +51,17 @@ public class FilterAndResultPage {
 	
 	public void wordJobs() {
 		try {
-			
 		WebElement searchJobs = driver.findElement(By.xpath("//*[contains(text(), 'Buscar empleos')]"));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();", searchJobs);
-		Thread.sleep(1000);
-		searchJobs.sendKeys("Marketing");
+		
+		Actions builder = new Actions(driver);
+		builder.sendKeys(searchJobs, "Marketing")
+				.perform();
 		}catch (Exception e){
 		}
+		
+	
 	}
 }
 
